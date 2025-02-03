@@ -18,10 +18,10 @@ const Resultados = ({presupuesto, tna, periodo, tipoPeriodo}) => {
     }
   return (
     <div className="border rounded text-left p-5 m-5 mb-0">
-        <h2 className="font-bold text-xl pb-2 text-center underline mb-1">Interes Generados</h2>
-        <p><span className="font-bold">Presupuesto total</span>: <span className="font-bold">{Ptotal}</span> </p>
-        <p>- Intereses totales: {Intereses}</p>
-        <p>- Promedio de interes diario: {Promedio}</p>
+        <p className=" text-center"><span className="font-medium">Presupuesto + Interes</span>: </p>
+        <h2 className="font-bold text-3xl pb-2 text-center mb-1">{Ptotal}</h2>
+        <p>- Interes total: {Intereses}</p>
+        <p>- Promedio diario: {Promedio}</p>
     </div>
   )
 }

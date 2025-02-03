@@ -61,7 +61,8 @@ function App() {
 
   return (
     <>
-      <div className="mx-auto shadow bg-white w-full lg:w-2/5 lg:max-w-[700px] p-5 m-10">
+    <div className=" md:bg-gray-50 h-screen absolute top-0 left-0 w-full">
+      <div className="mx-auto md:shadow bg-white w-full lg:w-2/5 lg:max-w-[700px] p-5 m-10">
         <h1 className="text-4xl text-center font-bold text-gray-800">
           Calcule su <span className="text-indigo-600">Interes</span>
         </h1>
@@ -69,7 +70,8 @@ function App() {
         <div className="flex flex-col my-5">
             <label>Ingrese su Presupuesto:</label>
             <input 
-              type="text"
+              type="number"
+              min="0"
               className="border rounded p-2"
               placeholder="Ej: 20,000.00"
               onChange={(e) => {setPresupuesto(Number(e.target.value)); setResultado(false)}}
@@ -78,7 +80,8 @@ function App() {
           <div className="flex flex-col my-5">
             <label>Ingrese el valor porcentual de TNA:</label>
             <input 
-              type="text"
+              type="number"
+              min="0"
               className="border rounded p-2"
               placeholder="Ej: 35.7"
               onChange={(e) => {setTna(Number(e.target.value)); setResultado(false)}}
@@ -89,7 +92,8 @@ function App() {
             <div className="flex gap-3 flex-col">
               <div className="w-full">
                   <input 
-                    type="text"
+                    type="number"
+                    min="0"
                     className="border rounded p-2 w-full"
                     placeholder="Ej: 10, 30, 60, 90"
                     onChange={(e) => {setPeriodo(Number(e.target.value)); setResultado(false)}}
@@ -109,6 +113,7 @@ function App() {
         </form>
        {resultado && <Resultados presupuesto={presupuesto} tna={tna} periodo={periodo} tipoPeriodo={tipoPeriodo}/>}
       </div>
+    </div>
     </>
   )
 }

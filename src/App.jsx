@@ -66,12 +66,13 @@ function App() {
         <h1 className="text-4xl text-center font-bold text-gray-800">
           Calcule su <span className="text-indigo-600">Interes</span>
         </h1>
-        <form className="m-5" onSubmit={handleSubmit}>
+        <form className="m-5" onSubmit={handleSubmit} noValidate>
         <div className="flex flex-col my-5">
             <label>Ingrese su Presupuesto:</label>
             <input 
               type="number"
               min="0"
+              step="0.1"
               className="border rounded p-2"
               placeholder="Ej: 20,000.00"
               onChange={(e) => {setPresupuesto(Number(e.target.value)); setResultado(false)}}
@@ -82,6 +83,7 @@ function App() {
             <input 
               type="number"
               min="0"
+              step="0.1"
               className="border rounded p-2"
               placeholder="Ej: 35.7"
               onChange={(e) => {setTna(Number(e.target.value)); setResultado(false)}}

@@ -1,29 +1,27 @@
-const formatearDinero = (valor) => {
-    const formatter = new Intl.NumberFormat('es-AR',{
-        style:'currency',
-        currency:'ARS'
-    });
-    return formatter.format(valor)
+export const formatearDinero = (cantidad) => {
+    return new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        minimumFractionDigits: 2
+    }).format(cantidad);
 }
 
-const calcularTotal = (presupuesto, TNA, periodo, tipo) => {
-    const tasaDiaria = TNA / 365 / 100;
+export const calcularTotal = (presupuesto, tna, periodo, tipoPeriodo) => {
+    
+    const TasaDiaria = tna / 100 / 365;
 
-    const dias = tipo === 1 ? periodo : tipo === 2 ? periodo * 30 : periodo * 365;
-
-    const presupuestoInicial = presupuesto;
-
-    for(let i = 0; i < dias; i++){
-        presupuesto += presupuesto * tasaDiaria;
+    let diasTotales = 0;
+    if (tipoPeriodo === 1) { 
+        diasTotales = periodo;
+    } else if (tipoPeriodo === 2) { 
+        diasTotales = periodo * 30; 
+    } else if (tipoPeriodo === 3) { 
+        diasTotales = periodo * 365;
     }
 
-    return {
-        total: presupuesto.toFixed(2),
-        promedio: ((presupuesto - presupuestoInicial)/dias).toFixed(2)
-    };
-};
+    const total = presupuesto * Math.pow(1 + TasaDiaria, diasTotales);
+    const interesTotal = total - presupuesto;
+    const promedio = interesTotal / diasTotales;
 
-export {
-    formatearDinero,
-    calcularTotal
+    return { total, promedio };
 }

@@ -1,8 +1,27 @@
-# React + Vite
+# 📈 Simulador de Interés Compuesto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al **Simulador de Interés Compuesto**, una aplicación web simple e intuitiva construida con React y estilizada con Tailwind CSS. Esta herramienta permite a los usuarios calcular el crecimiento de su inversión inicial (presupuesto) en función de una Tasa Nominal Anual (TNA) y un período definido (días, meses o años).
 
-Currently, two official plugins are available:
+El diseño moderno y responsivo garantiza una experiencia de usuario fluida en cualquier dispositivo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Captura de pantalla del formulario en vista móvil](./public/1.webp)
+
+## ✨ Características Principales
+
+* **Cálculo de Interés Compuesto:** Utiliza la fórmula financiera estándar para proyectar el monto final de la inversión.
+* **Diseño Moderno (Tailwind CSS):** Interfaz limpia, minimalista y totalmente responsiva.
+* **Selección de Período Flexible:** Permite ingresar el período de inversión en Días, Meses o Años.
+* **Validación de Datos:** Manejo robusto de errores para asegurar que se ingresen valores numéricos positivos.
+* **Resultados Detallados:** Muestra el monto total final, el interés total ganado y la ganancia promedio diaria.
+
+![Captura de pantalla del formulario en vista móvil](./public/2.webp)
+
+## 💻 Tecnologías Utilizadas
+
+* **React:** Para la construcción de la interfaz de usuario.
+* **Tailwind CSS:** Framework CSS utility-first para un estilizado rápido y moderno.
+* **JavaScript:** Lógica de cálculo y manejo de estados.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
